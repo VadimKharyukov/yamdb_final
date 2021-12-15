@@ -10,8 +10,8 @@ from rest_framework.decorators import api_view, action
 from rest_framework.permissions import IsAuthenticated, SAFE_METHODS
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-
 from reviews.models import Category, Genre, CustomUser, Review, Title
+
 from .permissions import (IsAdmin,
                           IsAdminOrReadOnly,
                           IsOwnerOrAdminOrModeratorOrReadOnly)
