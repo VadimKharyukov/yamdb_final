@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: vaden45/api_yamdb:latest
+          tags: vaden45/api_yamdb:v1.1.2021
 
   deploy:
     runs-on: ubuntu-latest
