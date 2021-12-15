@@ -5,28 +5,20 @@ from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters import CharFilter
 from django_filters.rest_framework import DjangoFilterBackend, FilterSet
-from rest_framework import status, viewsets, filters, mixins
-from rest_framework.decorators import api_view, action
-from rest_framework.permissions import IsAuthenticated, SAFE_METHODS
+from rest_framework import filters, mixins, status, viewsets
+from rest_framework.decorators import action, api_view
+from rest_framework.permissions import SAFE_METHODS, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from reviews.models import Category, Genre, CustomUser, Review, Title
 
-from .permissions import (IsAdmin,
-                          IsAdminOrReadOnly,
+from reviews.models import Category, CustomUser, Genre, Review, Title
+
+from .permissions import (IsAdmin, IsAdminOrReadOnly,
                           IsOwnerOrAdminOrModeratorOrReadOnly)
-from .serializers import (
-    TitleSerializer,
-    TitleListSerializer,
-    CategorySerializer,
-    GenreSerializer,
-    SignupSerializer,
-    AdminSerializer,
-    TokenSerializer,
-    UserSerializer,
-    ReviewSerializer,
-    CommentSerializer,
-)
+from .serializers import (AdminSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer, ReviewSerializer,
+                          SignupSerializer, TitleListSerializer,
+                          TitleSerializer, TokenSerializer, UserSerializer)
 
 
 @api_view(['POST'])
