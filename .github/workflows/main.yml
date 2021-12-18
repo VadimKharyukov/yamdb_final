@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          no_cache: true
+          no-cache: true
           context: ./api_yamdb/
           tags: vaden45/yamdb_final
 
