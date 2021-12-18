@@ -9,10 +9,10 @@ load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "secret")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = os.getenv("AllOWED_HOST", 'localhost')
 
