@@ -1,20 +1,16 @@
 import os
 from datetime import timedelta
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = os.getenv("AllOWED_HOST", '*')
+ALLOWED_HOSTS = os.environ.get("AllOWED_HOST", '*')
 
 # Application definition
 
@@ -68,13 +64,13 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE',
+        'ENGINE': os.environ.get('DB_ENGINE',
                             default='django.db.backends.postgresql'),
-        'NAME': os.getenv('DB_NAME', default='postgres'),
-        'USER': os.getenv('POSTGRES_USER', default='postgres'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='7704985'),
-        'HOST': os.getenv('DB_HOST', default='db'),
-        'PORT': os.getenv('DB_PORT', default='5432')
+        'NAME': os.environ.get('DB_NAME', default='postgres'),
+        'USER': os.environ.get('POSTGRES_USER', default='postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', default='7704985'),
+        'HOST': os.environ.get('DB_HOST', default='db'),
+        'PORT': os.environ.get('DB_PORT', default='5432')
     }
 }
 
