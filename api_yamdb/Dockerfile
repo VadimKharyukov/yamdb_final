@@ -1,12 +1,10 @@
 FROM python:3.7-slim
 
-RUN mkdir /app
+WORKDIR /app
 
-COPY requirements.txt /app
+COPY requirements.txt .
 
-RUN pip install -r /app/requirements.txt --no-cache-dir
-
-WORKDIR /app/api_yamdb/
+RUN pip install -r requirements.txt --no-cache-dir
 
 COPY . ./
 
